@@ -27,14 +27,14 @@ const App: React.FC = () => {
     setTasks(tasks.filter(task => id !== task.id))
   }
 
-  const handleEditTask = (id: string, 
-                          editField: string, 
-                          e: React.FormEvent<EventTarget>,
-                          editing: boolean) => {
+  const handleEditTask = (id: string, editField: string, e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
     setTasks(tasks.map(task => {
       return id === task.id 
-      ? {...task, content: editField} 
+      ? {
+        ...task, 
+        content: editField
+        } 
       : task
     }))
   }
